@@ -1,0 +1,27 @@
+{
+  "name": "shihaohao",
+  "version": "1.0.0",
+  "private": true,
+  "description": "食好好 — 食物质量质检检测，对照国标判定合格与否，支持 iOS / Android / 穿戴",
+  "scripts": {
+    "build": "node scripts/build-web.js",
+    "sync:android": "npm run build && npx cap sync android",
+    "sync:ios": "npm run build && npx cap sync ios",
+    "open:android": "npx cap open android",
+    "open:ios": "npx cap open ios",
+    "mobile:android": "npm run sync:android && npm run open:android",
+    "mobile:ios": "npm run sync:ios && npm run open:ios",
+    "test": "npm run build && node --test test/*.test.js"
+  },
+  "dependencies": {
+    "@capacitor/android": "^6.2.0",
+    "@capacitor/core": "^6.2.0",
+    "@capacitor/haptics": "^6.0.2",
+    "@capacitor/ios": "^6.2.0",
+    "@capacitor/status-bar": "^6.0.2"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^6.2.0",
+    "esbuild": "^0.24.0"
+  }
+}
